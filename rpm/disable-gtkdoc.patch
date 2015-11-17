@@ -1,5 +1,5 @@
 diff --git a/autogen.sh b/autogen.sh
-index d58c834..2ba29e4 100755
+index 2f58146..fef562e 100755
 --- a/autogen.sh
 +++ b/autogen.sh
 @@ -2,9 +2,30 @@
@@ -33,5 +33,5 @@ index d58c834..2ba29e4 100755
 +
 +autoreconf -fi -I m4
  
- run_configure=true
- for arg in $*; do
+ # Honor NOCONFIGURE for compatibility with gnome-autogen.sh
+ if test x"$NOCONFIGURE" = x; then
